@@ -1,0 +1,12 @@
+#line
+{
+    height: 2px;
+    background-color: red;
+}
+#car
+{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transform: scaleX(2) scaleY(2);
+}
