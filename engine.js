@@ -5,34 +5,12 @@ function Move()
     var number = document.getElementById("number").value;
     var pos = number * line/100;
     car.style.left = pos + 'px';
-    var posInt = parseFloat(car.style.left);
+    var posInt = parseFloat(car.style.left); 
 
-    if (oldPos < posInt)
-    {
-        console.log("Old");
-        console.log(oldPos);
-        console.log("####");
-
-        car.style.transform = "scaleX(-2) scaleY(2)";
-
-        console.log("Old");
-        console.log(oldPos);
-        console.log("CarPos");
-        console.log(posInt);
-
-    }else if (oldPos > posInt)
-    {
-        console.log("Old");
-        console.log(oldPos);
-        console.log("####");
-
-        car.style.transform = "scaleX(2) scaleY(2)";
-        console.log("Old");
-        console.log(oldPos);
-        console.log("CarPos");
-        console.log(posInt);
-    }
+    /* Had to use a hidden input to store the old value from the input number. Storing it on a regular variable didn't work */
     
-    oldPos = posInt -1;
-    
+    if (document.getElementById("hiddenId").value < posInt) car.style.transform = "scaleX(2) scaleY(2)";
+    else if (document.getElementById("hiddenId").value > posInt) car.style.transform = "scaleX(-2) scaleY(2)";
+
+    document.getElementById("hiddenId").value = posInt;
 }
